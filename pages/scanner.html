@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scanner - SmartQR Analyzer</title>
+  <link rel="stylesheet" href="../cssFile/globalStyles.css">
+</head>
+<body>
+
+<nav>
+  <a href="../index.html">SmartQR Analyzer</a>
+  <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+  <ul id="mainMenu">
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="../pages/dashboard.html">Dashboard</a></li>
+    <li><a href="../pages/scanner.html">Scanner</a></li>
+    <li><a href="../pages/analytics.html">Analytics</a></li>
+    <li><a href="../pages/history.html">History</a></li>
+    <li><button class="tiny-button" onclick="toggleTheme()">Theme</button></li>
+  </ul>
+</nav>
+
+
+<main class="page">
+  <h2>QR Scanner</h2>
+  <p>The scanner page supports three ways to read QR data: camera scan, uploaded QR image and manual input. For best testing, upload a clear QR code image or use Chrome/Edge for camera detection.</p>
+
+  <section class="scan-panel">
+    <section class="form-container">
+      <h3>1. Upload QR Image</h3>
+      <p>This is the recommended testing option. Select a clear QR code picture and click scan image. The page now uses jsQR for stronger image decoding.</p>
+
+      <div class="file-input">
+        <label for="qrImageInput">Choose QR Code Image</label>
+        <input id="qrImageInput" type="file" accept="image/*">
+      </div>
+
+      <div class="actions">
+        <button onclick="scanUploadedImage()">Scan Uploaded Image</button>
+      </div>
+
+      <div id="imagePreview" class="preview-box">
+        QR image preview will appear here.
+      </div>
+    </section>
+
+    <section class="form-container">
+      <h3>2. Camera Scanner</h3>
+      <p>Start the camera and hold a QR code clearly in front of it.</p>
+
+      <video id="qrVideo" muted playsinline></video>
+
+      <div class="actions">
+        <button onclick="startScanner()">Start Camera</button>
+        <button class="border-button" onclick="stopScanner()">Stop Camera</button>
+      </div>
+    </section>
+  </section>
+
+  <div id="imageResult" class="result-box">
+    Uploaded image scan result will appear here.
+  </div>
+
+  <div id="scannerResult" class="result-box">
+    Camera scanner result will appear here.
+  </div>
+
+  <section class="form-container">
+    <h3>3. Manual QR Data Input</h3>
+    <p>Use this option when browser camera or image decoding is not supported.</p>
+
+    <label for="manualQRData">Manual QR Data</label>
+    <textarea id="manualQRData" placeholder="Paste QR data here, for example https://example.com, 03001234567, WIFI:T:WPA;S:CampusNet;P:12345678;;"></textarea>
+
+    <div class="actions">
+      <button onclick="analyzeManualInput()">Analyze Data</button>
+      <button class="border-button" onclick="demoScan('https://example.com/login-offer')">Demo URL</button>
+      <button class="border-button" onclick="demoScan('03001234567')">Demo Phone</button>
+      <button class="border-button" onclick="demoScan('WIFI:T:WPA;S:CampusNet;P:12345678;;')">Demo WiFi</button>
+    </div>
+  </section>
+
+  <div id="analysisResult" class="result-box">
+    Manual analysis result will appear here.
+  </div>
+</main>
+
+
+<footer>
+  <div class="footer-container">
+    <div>
+      <h2>SmartQR Analyzer</h2>
+      <p>A browser-based QR reader and data analyzer developed with HTML, external CSS and JavaScript.</p>
+    </div>
+    <div>
+      <h3>Pages</h3>
+      <a href="../index.html">Home</a>
+      <a href="../pages/dashboard.html">Dashboard</a>
+      <a href="../pages/scanner.html">Scanner</a>
+      <a href="../pages/analytics.html">Analytics</a>
+      <a href="../pages/history.html">History</a>
+    </div>
+    <div>
+      <h3>Features</h3>
+      <p>Camera scan, QR image upload, manual input, category detection, risk suggestion and saved history.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.js"></script>
+<script src="../jsFile/jsFunctions.js"></script>
+</body>
+</html>

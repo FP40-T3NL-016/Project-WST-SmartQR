@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>History - SmartQR Analyzer</title>
+  <link rel="stylesheet" href="../cssFile/globalStyles.css">
+</head>
+<body>
+
+<nav>
+  <a href="../index.html">SmartQR Analyzer</a>
+  <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+  <ul id="mainMenu">
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="../pages/dashboard.html">Dashboard</a></li>
+    <li><a href="../pages/scanner.html">Scanner</a></li>
+    <li><a href="../pages/analytics.html">Analytics</a></li>
+    <li><a href="../pages/history.html">History</a></li>
+    <li><button class="tiny-button" onclick="toggleTheme()">Theme</button></li>
+  </ul>
+</nav>
+
+
+<main class="page">
+  <h2>Scan History</h2>
+  <p>This page displays locally saved QR scan records. The data remains available in the browser until the history is cleared.</p>
+
+  <div class="actions">
+    <button class="border-button" onclick="clearHistory()">Clear History</button>
+  </div>
+
+  <p id="historyNotice"></p>
+
+  <section class="table-container">
+    <table style="min-width:820px; max-width:1100px;">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Category</th>
+          <th>Risk</th>
+          <th>Detected Data</th>
+          <th>Date</th>
+        </tr>
+      </thead>
+      <tbody id="historyBody">
+        <tr>
+          <td colspan="5" class="table-empty">No scan history available.</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+</main>
+
+
+<footer>
+  <div class="footer-container">
+    <div>
+      <h2>SmartQR Analyzer</h2>
+      <p>A browser-based QR reader and data analyzer developed with HTML, external CSS and JavaScript.</p>
+    </div>
+    <div>
+      <h3>Pages</h3>
+      <a href="../index.html">Home</a>
+      <a href="../pages/dashboard.html">Dashboard</a>
+      <a href="../pages/scanner.html">Scanner</a>
+      <a href="../pages/analytics.html">Analytics</a>
+      <a href="../pages/history.html">History</a>
+    </div>
+    <div>
+      <h3>Features</h3>
+      <p>Camera scan, QR image upload, manual input, category detection, risk suggestion and saved history.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="../jsFile/jsFunctions.js"></script>
+</body>
+</html>

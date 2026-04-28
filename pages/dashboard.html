@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - SmartQR Analyzer</title>
+  <link rel="stylesheet" href="../cssFile/globalStyles.css">
+</head>
+<body>
+
+<nav>
+  <a href="../index.html">SmartQR Analyzer</a>
+  <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+  <ul id="mainMenu">
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="../pages/dashboard.html">Dashboard</a></li>
+    <li><a href="../pages/scanner.html">Scanner</a></li>
+    <li><a href="../pages/analytics.html">Analytics</a></li>
+    <li><a href="../pages/history.html">History</a></li>
+    <li><button class="tiny-button" onclick="toggleTheme()">Theme</button></li>
+  </ul>
+</nav>
+
+
+<main class="page">
+  <h2>Dashboard</h2>
+  <p class="notice">This dashboard presents the main modules of the Smart QR Code Reader and Data Analyzer.</p>
+
+  <section class="stats-row">
+    <div class="stat-box">
+      <strong>3</strong>
+      <span>Scanning Methods</span>
+    </div>
+    <div class="stat-box">
+      <strong>7+</strong>
+      <span>Data Categories</span>
+    </div>
+    <div class="stat-box">
+      <strong>50</strong>
+      <span>Saved Local Records</span>
+    </div>
+  </section>
+
+  <section class="card-container">
+    <article class="card">
+      <img src="../sources/scanner.png" alt="Scanner Module">
+      <h3>QR Scanner</h3>
+      <p>Scan through camera, upload a QR image, or paste QR data manually for instant analysis.</p>
+      <a href="scanner.html">Open Scanner</a>
+    </article>
+
+    <article class="card">
+      <img src="../sources/analytics.png" alt="Analytics Module">
+      <h3>Data Analytics</h3>
+      <p>View category-wise summaries and percentages based on scanned QR records.</p>
+      <a href="analytics.html">View Analytics</a>
+    </article>
+
+    <article class="card">
+      <img src="../sources/history.png" alt="History Module">
+      <h3>Scan History</h3>
+      <p>Review the saved QR scan records stored locally in the browser.</p>
+      <a href="history.html">View History</a>
+    </article>
+  </section>
+
+  <section class="table-container">
+    <table class="table-bordered" style="min-width:700px; max-width:1000px;">
+      <thead>
+        <tr>
+          <th>Module</th>
+          <th>Main Purpose</th>
+          <th>JavaScript Function</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Camera Scanner</td>
+          <td>Reads QR code through browser camera</td>
+          <td>startScanner()</td>
+        </tr>
+        <tr>
+          <td>Image Upload Scanner</td>
+          <td>Detects QR code from selected image file</td>
+          <td>scanUploadedImage()</td>
+        </tr>
+        <tr>
+          <td>Analyzer</td>
+          <td>Detects data type and risk level</td>
+          <td>analyzeQRData()</td>
+        </tr>
+        <tr>
+          <td>History and Analytics</td>
+          <td>Saves records and summarizes categories</td>
+          <td>renderHistory(), renderAnalytics()</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+</main>
+
+
+<footer>
+  <div class="footer-container">
+    <div>
+      <h2>SmartQR Analyzer</h2>
+      <p>A browser-based QR reader and data analyzer developed with HTML, external CSS and JavaScript.</p>
+    </div>
+    <div>
+      <h3>Pages</h3>
+      <a href="../index.html">Home</a>
+      <a href="../pages/dashboard.html">Dashboard</a>
+      <a href="../pages/scanner.html">Scanner</a>
+      <a href="../pages/analytics.html">Analytics</a>
+      <a href="../pages/history.html">History</a>
+    </div>
+    <div>
+      <h3>Features</h3>
+      <p>Camera scan, QR image upload, manual input, category detection, risk suggestion and saved history.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="../jsFile/jsFunctions.js"></script>
+</body>
+</html>

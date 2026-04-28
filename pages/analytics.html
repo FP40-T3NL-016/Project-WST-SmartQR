@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Analytics - SmartQR Analyzer</title>
+  <link rel="stylesheet" href="../cssFile/globalStyles.css">
+</head>
+<body>
+
+<nav>
+  <a href="../index.html">SmartQR Analyzer</a>
+  <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+  <ul id="mainMenu">
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="../pages/dashboard.html">Dashboard</a></li>
+    <li><a href="../pages/scanner.html">Scanner</a></li>
+    <li><a href="../pages/analytics.html">Analytics</a></li>
+    <li><a href="../pages/history.html">History</a></li>
+    <li><button class="tiny-button" onclick="toggleTheme()">Theme</button></li>
+  </ul>
+</nav>
+
+
+<main class="page">
+  <h2>Analytics</h2>
+  <p>The analytics page summarizes scanned QR records by category. It uses JavaScript and localStorage records created from the scanner page.</p>
+
+  <section class="stats-row">
+    <div class="stat-box">
+      <strong id="totalScansBox">0</strong>
+      <span>Total Scans</span>
+    </div>
+    <div class="stat-box">
+      <strong id="categoryBox">0</strong>
+      <span>Categories Found</span>
+    </div>
+    <div class="stat-box">
+      <strong id="riskBox">0</strong>
+      <span>Medium/High Risk</span>
+    </div>
+  </section>
+
+  <p id="analyticsSummary" class="notice">
+    Analytics summary will appear here.
+  </p>
+
+  <section class="table-container">
+    <table class="table-bordered" style="min-width:480px; max-width:780px;">
+      <thead>
+        <tr>
+          <th>QR Data Category</th>
+          <th>Total Records</th>
+          <th>Percentage</th>
+        </tr>
+      </thead>
+      <tbody id="analyticsBody">
+        <tr>
+          <td colspan="3" class="table-empty">No analytics data available.</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="card-container">
+    <article class="card">
+      <h3>URL Detection</h3>
+      <p>Identifies website links and highlights suspicious words such as login, verify, free, gift, offer and claim.</p>
+    </article>
+    <article class="card">
+      <h3>Contact Detection</h3>
+      <p>Recognizes phone numbers, email addresses and contact-card formats.</p>
+    </article>
+    <article class="card">
+      <h3>Risk Suggestion</h3>
+      <p>Provides basic low, medium or high risk classification according to the detected data pattern.</p>
+    </article>
+  </section>
+</main>
+
+
+<footer>
+  <div class="footer-container">
+    <div>
+      <h2>SmartQR Analyzer</h2>
+      <p>A browser-based QR reader and data analyzer developed with HTML, external CSS and JavaScript.</p>
+    </div>
+    <div>
+      <h3>Pages</h3>
+      <a href="../index.html">Home</a>
+      <a href="../pages/dashboard.html">Dashboard</a>
+      <a href="../pages/scanner.html">Scanner</a>
+      <a href="../pages/analytics.html">Analytics</a>
+      <a href="../pages/history.html">History</a>
+    </div>
+    <div>
+      <h3>Features</h3>
+      <p>Camera scan, QR image upload, manual input, category detection, risk suggestion and saved history.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="../jsFile/jsFunctions.js"></script>
+</body>
+</html>
